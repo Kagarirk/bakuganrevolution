@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakuganRevolution</title>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="./css/preloader.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_mobile.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="reactor">
+            <div class="core"></div>
+          <img src="./img/logo.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+
+    <nav>
+        <div class="navbar">
+            <div class="nav-links">
+              <a href="#" id="home-link">Home</a>
+              <a href="wiki.html" id="wiki-link">Wiki</a>
+              <a href="shop.html" id="shop-link">Shop</a>
+            </div>
+            <div class="burger-menu" id="burger-menu">
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+            </div>
+          </div>
+          
+          <!-- Панелька для мобільної версії -->
+          <div class="mobile-nav" id="mobile-nav">
+            <a href="#" id="home-link-mobile">Home</a>
+            <a href="wiki.html" id="wiki-link-mobile">Wiki</a>
+            <a href="shop.html" id="shop-link-mobile">Shop</a>
+          </div>
+        <div class="logo-container">
+            <img src="./img/logo.png" alt="Logo" class="logo">
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="./img/hero_bak.jpg" alt="Hero Image">
+        <button>Start Game</button>
+      </section>
+
+
+    <script> // Отримуємо елементи
+        const burgerMenu = document.getElementById("burger-menu");
+        const mobileNav = document.getElementById("mobile-nav");
+        
+        // Додаємо обробник події на бургер
+        burgerMenu.addEventListener("click", function() {
+          mobileNav.classList.toggle("open"); // Відкриваємо/закриваємо панельку
+        });
+        </script>
+      <script src="./js/preloader.js"></script>
+</body>
+</html>

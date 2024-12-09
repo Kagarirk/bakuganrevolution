@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+    nav .nav-links{
+        display: none;
+    }
+    .burger-menu {
+      display: flex; /* Показуємо бургер */
+    }
+  
+    .mobile-nav.open {
+      display: flex; /* Показуємо панельку при відкритті */
+    }
+  }

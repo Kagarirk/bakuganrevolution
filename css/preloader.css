@@ -1,0 +1,93 @@
+/* Стилі для прелоудера */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0); /* Темний фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Стилі для реактора */
+  .reactor {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.5), rgba(255, 87, 34, 0.2) 60%);
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+    animation: reactor-pulse 2s infinite, reactor-glow 1.5s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Центральний ядро реактора */
+  .core {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #ff5722;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+    animation: core-glow 1.5s infinite alternate;
+  }
+  
+  /* Стилі для логотипа */
+  .logo {
+    position: relative;
+    z-index: 10;
+    width: 50px; /* Розмір логотипа */
+    height: auto;
+    animation: logo-spin 3s linear infinite; /* Легка анімація для логотипа */
+  }
+  
+  /* Анімація реактора (пульсуючий ефект) */
+  @keyframes reactor-pulse {
+    0% {
+      transform: scale(1);
+      border-color: rgba(255, 87, 34, 0.8);
+    }
+    50% {
+      transform: scale(1.2);
+      border-color: rgba(255, 87, 34, 0.4);
+    }
+    100% {
+      transform: scale(1);
+      border-color: rgba(255, 87, 34, 0.8);
+    }
+  }
+  
+  /* Анімація для сяючого ефекту на реакторі */
+  @keyframes reactor-glow {
+    0% {
+      box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 50px rgba(255, 87, 34, 1), 0 0 20px rgba(255, 87, 34, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+    }
+  }
+  
+  /* Анімація для центрального ядра */
+  @keyframes core-glow {
+    0% {
+      box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 50px rgba(255, 87, 34, 1), 0 0 20px rgba(255, 87, 34, 0.9);
+    }
+    100% {
+      box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+    }
+  }
+  
+  
