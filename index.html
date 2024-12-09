@@ -70,20 +70,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизація та Реєстрація</title>
-    <script src="script.js" defer></script>
+    <title>Авторизація та реєстрація</title>
 </head>
 <body>
-    <div id="app">
-        <h2>Реєстрація</h2>
-        <form id="register-form">
-            <label>Логін:</label>
-            <input type="text" id="register-username" required><br>
-            <label>Пароль:</label>
-            <input type="password" id="register-password" required><br>
-            <button type="submit">Зареєструватися</button>
-        </form>
-        <p>Перевірте консоль для повідомлень.</p>
-    </div>
+    <h1>Форма реєстрації</h1>
+    <form id="registerForm">
+        <input type="text" id="username" placeholder="Користувач" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button type="submit">Зареєструватися</button>
+    </form>
+
+    <h1>Форма авторизації</h1>
+    <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Користувач" required>
+        <input type="password" id="loginPassword" placeholder="Пароль" required>
+        <button type="submit">Увійти</button>
+    </form>
+
+    <script src="app.js"></script>
 </body>
 </html>
