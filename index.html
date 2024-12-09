@@ -51,6 +51,27 @@
         <button>Start Game</button>
       </section>
 
+      <section class="news-section">
+        <h2>Latest News</h2>
+    
+        <!-- Фільтр для новин -->
+        <input type="text" id="news-filter" placeholder="Search for news..." oninput="filterNews()">
+    
+        <div class="news-cards" id="news-cards">
+            <!-- Динамічно додані новини з'являтимуться тут -->
+        </div>
+    </section>
+    
+    <!-- Модальне вікно для новин -->
+    <div id="news-modal" style="display:none;" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal()" class="close-btn">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="News Image">
+        <p id="modal-content"></p>
+        <p id="modal-date"></p>
+      </div>
+    </div>
 
     <script> // Отримуємо елементи
         const burgerMenu = document.getElementById("burger-menu");
@@ -62,31 +83,7 @@
         });
         </script>
       <script src="./js/preloader.js"></script>
+      <script src="./js/news.js"></script>
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизація та реєстрація</title>
-</head>
-<body>
-    <h1>Форма реєстрації</h1>
-    <form id="registerForm">
-        <input type="text" id="username" placeholder="Користувач" required>
-        <input type="password" id="password" placeholder="Пароль" required>
-        <button type="submit">Зареєструватися</button>
-    </form>
-
-    <h1>Форма авторизації</h1>
-    <form id="loginForm">
-        <input type="text" id="loginUsername" placeholder="Користувач" required>
-        <input type="password" id="loginPassword" placeholder="Пароль" required>
-        <button type="submit">Увійти</button>
-    </form>
-
-    <script src="app.js"></script>
-</body>
-</html>
