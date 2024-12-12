@@ -19,7 +19,7 @@
               <img src="./img/logo.png" alt="Logo" class="logo" />
             </div>
           </div>
-          <!-- Ліва панель -->
+        <!-- Ліва панель -->
             <div class="sidebar">
                 <img src="./img/logo.png" alt="Logo" class="logo">
                 <img src="profile-icon.png" alt="Profile" class="icon" onclick="openModal('profile-modal')">
@@ -30,9 +30,42 @@
                 <img src="deck-icon.png" alt="Deck" class="icon" onclick="openModal('deck-modal')">
                 <div class="time" id="time">00:00</div>
             </div> 
-            
+        <!-- Основна частина -->
+        <div class="main-container">
+            <div class="content" id="content-area">
+                <h1>Welcome to the Game!</h1>
+            </div>
+        </div>
+
+
+        <!-- Modals -->
+        <div id="profile-modal" class="modal">
+            <div class="modal-header">Profile <span class="modal-close" onclick="closeModal('profile-modal')">&times;</span></div>
+            <p>User information goes here...</p>
+        </div>
+
+        <div id="inventory-modal" class="modal">
+            <div class="modal-header">Inventory <span class="modal-close" onclick="closeModal('inventory-modal')">&times;</span></div>
+            <p>Your items...</p>
+        </div>
+
+        <div id="quests-modal" class="modal">
+            <div class="modal-header">Quests <span class="modal-close" onclick="closeModal('quests-modal')">&times;</span></div>
+            <p>Daily and active quests...</p>
+        </div>
+
+        <div id="shop-modal" class="modal">
+            <div class="modal-header">Shop <span class="modal-close" onclick="closeModal('shop-modal')">&times;</span></div>
+            <p>Shop items...</p>
+        </div>
+
+        <div id="deck-modal" class="modal">
+            <div class="modal-header">Deck Settings <span class="modal-close" onclick="closeModal('deck-modal')">&times;</span></div>
+            <p>Deck customization...</p>
+        </div>
 
           <script src="./js/preloader.js"></script>
           <script src="./js/time.js"></script>
+          <script src="./js/game_panel.js"></script>
     </body>
 </html>
