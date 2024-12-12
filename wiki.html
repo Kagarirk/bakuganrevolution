@@ -5,21 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/wiki.css">
+    <link rel="stylesheet" type="text/css" href="./css/style_mobile.css">
   </head>
   <body>
-    <nav>
-        <div class="nav-links">
-        <a href="index.html" id="home-link">Home</a>
-        <a href="wiki.html" id="wiki-link">Wiki</a>
-        <a href="shop.html" id="shop-link">Shop</a>
-        </div>
+      <nav>
+        <div class="navbar">
+            <div class="nav-links">
+              <a href="index.html" id="home-link">Home</a>
+              <a href="wiki.html" id="wiki-link">Wiki</a>
+              <a href="shop.html" id="shop-link">Shop</a>
+            </div>
+            <div class="burger-menu" id="burger-menu">
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+            </div>
+          </div>
+          
+          <!-- Панелька для мобільної версії -->
+          <div class="mobile-nav" id="mobile-nav">
+            <a href="index.html" id="home-link-mobile">Home</a>
+            <a href="wiki.html" id="wiki-link-mobile">Wiki</a>
+            <a href="shop.html" id="shop-link-mobile">Shop</a>
+          </div>
         <div class="logo-container">
-        <img src="./css/img/logo.png" alt="Logo" class="logo">
+            <img src="./img/logo.png" alt="Logo" class="logo">
         </div>
-        <div>
-        <button id="language-switch" class="language-switch">EN</button>
-        </div>
-  </nav>
+    </nav>
+        
   
   <section class="news-section">
     <h2>Select a Category</h2>
@@ -28,7 +41,7 @@
       <button onclick="filterContent('gateCards')"class="custom-button"><img src="https://via.placeholder.com/50x50" alt="bakugan">Gate Cards</button>
       <button onclick="filterContent('abilityCards')"class="custom-button"><img src="https://via.placeholder.com/50x50" alt="bakugan">Ability Cards</button>
       <button onclick="filterContent('quests')"class="custom-button"><img src="https://via.placeholder.com/50x50" alt="bakugan">Quests</button>
-      <button onclick="filterContent('events')"class="custom-button"><img src="./css/img/icon_event.png" alt="bakugan">Events</button>
+      <button onclick="filterContent('events')"class="custom-button"><img src="./img/icon_event.png" alt="bakugan">Events</button>
     </div>
   </section>
  
@@ -41,5 +54,14 @@
     </div>
     <p>© 2024 MARI-corporation</p>
   </footer>
+  <script> // Отримуємо елементи
+    const burgerMenu = document.getElementById("burger-menu");
+    const mobileNav = document.getElementById("mobile-nav");
+    
+    // Додаємо обробник події на бургер
+    burgerMenu.addEventListener("click", function() {
+      mobileNav.classList.toggle("open"); // Відкриваємо/закриваємо панельку
+    });
+    </script>
   </body>
   </html>
