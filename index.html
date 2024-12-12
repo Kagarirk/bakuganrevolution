@@ -53,10 +53,6 @@
 
       <section class="news-section">
         <h2>Latest News</h2>
-    
-        <!-- Фільтр для новин -->
-        <input type="text" id="news-filter" placeholder="Search for news..." oninput="filterNews()">
-    
         <div class="news-cards" id="news-cards">
             <!-- Динамічно додані новини з'являтимуться тут -->
         </div>
@@ -65,7 +61,7 @@
     <!-- Модальне вікно для новин -->
     <div id="news-modal" style="display:none;" class="modal">
       <div class="modal-content">
-        <span onclick="closeModal()" class="close-btn">&times;</span>
+        <button class="modal-close" onclick="closeModal()">X</button>
         <h2 id="modal-title"></h2>
         <img id="modal-image" src="" alt="News Image">
         <p id="modal-content"></p>

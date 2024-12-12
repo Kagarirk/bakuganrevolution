@@ -78,9 +78,21 @@ function openNewsModal(newsId) {
 }
 
 // Закриття модального вікна
+// Отримати модальне вікно та сам блок контенту
+const modal = document.getElementById('news-modal');
+const modalContent = document.querySelector('#news-modal .modal-content');
+
+// Функція для закриття модального вікна
 function closeModal() {
-    document.getElementById('news-modal').style.display = 'none';
+    modal.style.display = 'none';
 }
+
+// Додавання обробника подій для кліку поза модальним блоком
+modal.addEventListener('click', function(event) {
+    if (!modalContent.contains(event.target)) {
+        closeModal();
+    }
+});
 
 // Спочатку відображаємо всі новини
 renderNews(newsData);
