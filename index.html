@@ -69,6 +69,26 @@
       </div>
     </div>
 
+    <div id="auth-modal" class="modal">
+      <div class="modal-content">
+          <button class="modal-close" onclick="closeAuthModal()">X</button>
+          <div id="auth-container">
+            <h2>Реєстрація</h2>
+            <form id="register-form">
+                <input type="text" id="register-username" placeholder="Ім'я користувача" required />
+                <input type="password" id="register-password" placeholder="Пароль" required />
+                <button type="submit">Зареєструватися</button>
+            </form>
+        
+            <h2>Авторизація</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Ім'я користувача" required />
+                <input type="password" id="login-password" placeholder="Пароль" required />
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+      </div>
+    </div>
     <script> // Отримуємо елементи
         const burgerMenu = document.getElementById("burger-menu");
         const mobileNav = document.getElementById("mobile-nav");
@@ -80,6 +100,7 @@
         </script>
       <script src="./js/preloader.js"></script>
       <script src="./js/news.js"></script>
+      <script src="./js/auth.js"></script>
 </body>
 </html>
 
