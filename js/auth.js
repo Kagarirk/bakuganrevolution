@@ -33,6 +33,11 @@ const users = [
         id: 'user-1',
         username: 'admin',
         password: 'password123' // У реальному застосунку паролі слід зберігати хешованими
+    },
+    {
+        id: 'user-2',
+        username: 'lera',
+        password: '1111' // У реальному застосунку паролі слід зберігати хешованими
     }
 ];
 
