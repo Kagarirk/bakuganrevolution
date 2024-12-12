@@ -16,6 +16,18 @@ authModal.addEventListener('click', function(event) {
         closeAuthModal();
     }
 });
+
+function switchToRegister() {
+    document.getElementById('auth-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'block';
+}
+
+function switchToLogin() {
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('auth-section').style.display = 'block';
+
+}
+
 const users = [
     {
         id: 'user-1',

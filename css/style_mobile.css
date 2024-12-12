@@ -9,4 +9,16 @@
     .mobile-nav.open {
       display: flex; /* Показуємо панельку при відкритті */
     }
+    .modal-content {
+      width: 95%;
+  }
+
+  .modal-heading {
+      font-size: 1.5rem;
+  }
+
+  .auth-button {
+      font-size: 1rem;
+  }
+  
   }

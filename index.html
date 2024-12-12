@@ -71,24 +71,29 @@
 
     <div id="auth-modal" class="modal">
       <div class="modal-content">
-          <button class="modal-close" onclick="closeAuthModal()">X</button>
+          <button class="modal-close" onclick="closeAuthModal()">&times;</button>
           <div id="auth-container">
-            <h2>Реєстрація</h2>
-            <form id="register-form">
-                <input type="text" id="register-username" placeholder="Ім'я користувача" required />
-                <input type="password" id="register-password" placeholder="Пароль" required />
-                <button type="submit">Зареєструватися</button>
-            </form>
-        
-            <h2>Авторизація</h2>
-            <form id="login-form">
-                <input type="text" id="login-username" placeholder="Ім'я користувача" required />
-                <input type="password" id="login-password" placeholder="Пароль" required />
-                <button type="submit">Увійти</button>
-            </form>
-        </div>
+              <div id="auth-section">
+                  <h2 class="modal-heading">Авторизація</h2>
+                  <form id="login-form" class="auth-form">
+                      <input type="text" id="login-username" placeholder="Ім'я користувача" required />
+                      <input type="password" id="login-password" placeholder="Пароль" required />
+                      <button type="submit" class="auth-button">Увійти</button>
+                  </form>
+                  <p class="switch-text">Ще немає аккаунта? <button id="switch-to-register" class="switch-button" onclick="switchToRegister()">Зареєструватися</button></p>
+              </div>
+              <div id="register-section" style="display: none;">
+                  <h2 class="modal-heading">Реєстрація</h2>
+                  <form id="register-form" class="auth-form">
+                      <input type="text" id="register-username" placeholder="Ім'я користувача" required />
+                      <input type="password" id="register-password" placeholder="Пароль" required />
+                      <button type="submit" class="auth-button">Зареєструватися</button>
+                  </form>
+                  <p class="switch-text">Вже маєте аккаунт? <button id="switch-to-login" class="switch-button" onclick="switchToLogin()">Увійти</button></p>
+              </div>
+          </div>
       </div>
-    </div>
+  </div>
     <script> // Отримуємо елементи
         const burgerMenu = document.getElementById("burger-menu");
         const mobileNav = document.getElementById("mobile-nav");
