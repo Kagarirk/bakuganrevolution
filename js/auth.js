@@ -1,3 +1,6 @@
+document.querySelector('.hero button').addEventListener('click', () => {
+    document.getElementById('auth-modal').style.display = 'flex';
+  });
 // Отримати модальне вікно та сам блок контенту
 const authModal = document.getElementById('auth-modal');
 const authModalContent = document.querySelector('#auth-modal .modal-content');
