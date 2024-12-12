@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="stylesheet" href="./css/preloader.css">
+        <link rel="stylesheet" href="./css/game.css">
+        <link rel="stylesheet" href="./css/game_mobile.css">
+    </head>
+    <body>
+        <div class="preloader">
+            <div class="reactor">
+                <div class="core"></div>
+              <img src="./img/logo.png" alt="Logo" class="logo" />
+            </div>
+          </div>
+          <!-- Ліва панель -->
+            <div class="sidebar">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <img src="profile-icon.png" alt="Profile" class="icon" onclick="openModal('profile-modal')">
+                <img src="world-icon.png" alt="World" class="icon" onclick="loadContent('world')">
+                <img src="inventory-icon.png" alt="Inventory" class="icon" onclick="openModal('inventory-modal')">
+                <img src="quests-icon.png" alt="Quests" class="icon" onclick="openModal('quests-modal')">
+                <img src="shop-icon.png" alt="Shop" class="icon" onclick="openModal('shop-modal')">
+                <img src="deck-icon.png" alt="Deck" class="icon" onclick="openModal('deck-modal')">
+                <div class="time" id="time">00:00</div>
+            </div> 
+            
+
+          <script src="./js/preloader.js"></script>
+          <script src="./js/time.js"></script>
+    </body>
+</html>
