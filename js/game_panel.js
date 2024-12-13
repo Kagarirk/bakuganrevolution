@@ -7,8 +7,29 @@ function closeModal(modalId) {
 }
 
 function loadContent(contentId) {
-    document.getElementById('content-area').innerHTML = `<h1>Loading ${contentId}...</h1>`;
+  const contentArea = document.getElementById('content-area');
+  
+  // Показуємо повідомлення про завантаження
+  contentArea.innerHTML = `<h1>Loading ${contentId}...</h1>`;
+  
+  // Завантажуємо файл world.html
+  fetch('./world/world.html')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`Failed to load content: ${response.statusText}`);
+          }
+          return response.text();
+      })
+      .then(html => {
+          // Додаємо завантажений контент у content-area
+          contentArea.innerHTML = html;
+      })
+      .catch(error => {
+          // Виводимо помилку, якщо завантаження не вдалося
+          contentArea.innerHTML = `<h1>Error: ${error.message}</h1>`;
+      });
 }
+
 
 // Для мобільної версії відкриття чату
 function toggleChat() {
