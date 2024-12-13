@@ -45,9 +45,24 @@
         </div>
 
         <div id="inventory-modal" class="modal">
-            <div class="modal-header">Inventory <span class="modal-close" onclick="closeModal('inventory-modal')">&times;</span></div>
-            <p>Your items...</p>
-        </div>
+            <div class="modal-header">
+              Inventory 
+              <span class="modal-close" onclick="closeModal('inventory-modal')">&times;</span>
+            </div>
+            <div class="modal-content">
+              <div id="inventory-items" class="inventory-items">
+                <!-- Items will be dynamically loaded here -->
+              </div>
+              <div id="item-details" class="item-details hidden">
+                <p id="item-name" class="item-name"></p>
+                <p id="item-quantity" class="item-quantity"></p>
+                <div id="item-actions" class="item-actions">
+                  <button id="use-button" onclick="useItem()">Use</button>
+                  <button id="discard-button" onclick="discardItem()">Discard</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div id="quests-modal" class="modal">
             <div class="modal-header">Quests <span class="modal-close" onclick="closeModal('quests-modal')">&times;</span></div>
