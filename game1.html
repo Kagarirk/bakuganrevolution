@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Interface</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2e;
+            color: #ffffff;
+        }
+
+        /* Навігаційна панель */
+        .sidebar {
+            width: 80px;
+            background-color: #252535;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .sidebar img.logo {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .icon {
+            width: 40px;
+            height: 40px;
+            margin: 15px 0;
+            cursor: pointer;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .sidebar .icon:hover {
+            filter: none;
+        }
+
+        /* Основний контейнер */
+        .main-container {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        /* Друге вікно - контент */
+        .content {
+            flex: 2;
+            padding: 10px;
+            background-color: #2a2a40;
+            overflow-y: auto;
+        }
+
+        /* Третє вікно - чат */
+        .chat {
+            flex: 1;
+            background-color: #29293f;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: #343450;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .chat-input {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            background-color: #3a3a5a;
+            border: none;
+            color: #ffffff;
+        }
+
+        .chat-input button {
+            background-color: #454578;
+            border: none;
+            padding: 10px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* Мобільна версія */
+        @media (max-width: 768px) {
+            .chat {
+                display: none;
+            }
+
+            .chat.open {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1000;
+                background-color: #29293f;
+            }
+        }
+
+        /* Вікна профіля, інвентаря, і т.д. */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2a2a40;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal.open {
+            display: block;
+        }
+
+        .modal-header {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .modal-close {
+            cursor: pointer;
+            color: #ffffff;
+            font-weight: bold;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo" class="logo">
+        <img src="profile-icon.png" alt="Profile" class="icon" onclick="openModal('profile-modal')">
+        <img src="world-icon.png" alt="World" class="icon" onclick="loadContent('world')">
+        <img src="inventory-icon.png" alt="Inventory" class="icon" onclick="openModal('inventory-modal')">
+        <img src="quests-icon.png" alt="Quests" class="icon" onclick="openModal('quests-modal')">
+        <img src="shop-icon.png" alt="Shop" class="icon" onclick="openModal('shop-modal')">
+        <img src="deck-icon.png" alt="Deck" class="icon" onclick="openModal('deck-modal')">
+    </div>
+
+    <div class="main-container">
+        <div class="content" id="content-area">
+            <h1>Welcome to the Game!</h1>
+        </div>
+        <div class="chat" id="chat-area">
+            <div class="chat-header">Chat</div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-header">Profile <span class="modal-close" onclick="closeModal('profile-modal')">&times;</span></div>
+        <p>User information goes here...</p>
+    </div>
+
+    <div id="inventory-modal" class="modal">
+        <div class="modal-header">Inventory <span class="modal-close" onclick="closeModal('inventory-modal')">&times;</span></div>
+        <p>Your items...</p>
+    </div>
+
+    <div id="quests-modal" class="modal">
+        <div class="modal-header">Quests <span class="modal-close" onclick="closeModal('quests-modal')">&times;</span></div>
+        <p>Daily and active quests...</p>
+    </div>
+
+    <div id="shop-modal" class="modal">
+        <div class="modal-header">Shop <span class="modal-close" onclick="closeModal('shop-modal')">&times;</span></div>
+        <p>Shop items...</p>
+    </div>
+
+    <div id="deck-modal" class="modal">
+        <div class="modal-header">Deck Settings <span class="modal-close" onclick="closeModal('deck-modal')">&times;</span></div>
+        <p>Deck customization...</p>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('open');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('open');
+        }
+
+        function loadContent(contentId) {
+            document.getElementById('content-area').innerHTML = `<h1>Loading ${contentId}...</h1>`;
+        }
+
+        // Для мобільної версії відкриття чату
+        function toggleChat() {
+            const chat = document.getElementById('chat-area');
+            chat.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
