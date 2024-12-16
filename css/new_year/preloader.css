@@ -1,0 +1,126 @@
+/* Стилі для прелоудера */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Темний фон з напівпрозорістю */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Стилі для новорічного реактора */
+.reactor {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.3) 60%); /* Червоний та бірюзовий */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(0, 255, 255, 0.8);
+  animation: reactor-pulse 2s infinite, reactor-glow 1.5s infinite alternate, snowflakes 3s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Центральне ядро реактора */
+.core {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ff6347, #ff4500); /* Новорічний червоний */
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+  animation: core-glow 1.5s infinite alternate;
+}
+
+/* Стилі для логотипа */
+.logo {
+  position: relative;
+  z-index: 10;
+  width: 50px; /* Розмір логотипа */
+  height: auto;
+  animation: logo-spin 3s linear infinite; /* Легка анімація для логотипа */
+}
+
+/* Анімація для пульсації реактора */
+@keyframes reactor-pulse {
+  0% {
+      transform: scale(1);
+      border-color: rgba(255, 0, 0, 0.8);
+  }
+  50% {
+      transform: scale(1.2);
+      border-color: rgba(0, 255, 255, 0.4);
+  }
+  100% {
+      transform: scale(1);
+      border-color: rgba(255, 0, 0, 0.8);
+  }
+}
+
+/* Анімація сяючого ефекту на реакторі */
+@keyframes reactor-glow {
+  0% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(0, 255, 255, 0.8);
+  }
+  50% {
+      box-shadow: 0 0 50px rgba(255, 87, 34, 1), 0 0 20px rgba(0, 255, 255, 1);
+  }
+  100% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Анімація для центрального ядра */
+@keyframes core-glow {
+  0% {
+      box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+  }
+  50% {
+      box-shadow: 0 0 50px rgba(255, 87, 34, 1), 0 0 20px rgba(255, 87, 34, 0.9);
+  }
+  100% {
+      box-shadow: 0 0 30px rgba(255, 87, 34, 1), 0 0 10px rgba(255, 87, 34, 0.7);
+  }
+}
+
+/* Новорічний снігопад */
+@keyframes snowflakes {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+}
+
+.snowflake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: snowflakes 3s infinite;
+}
+
+.snowflake:nth-child(odd) {
+  animation-duration: 3s;
+}
+
+.snowflake:nth-child(even) {
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+}
