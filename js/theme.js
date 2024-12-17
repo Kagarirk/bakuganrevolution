@@ -1,5 +1,5 @@
 // Вкажіть тут назву поточної теми
-const CURRENT_THEME = 'default'; // Змінюйте на 'default', 'new_year' тощо
+const CURRENT_THEME = 'new_year'; // Змінюйте на 'default', 'new_year' тощо
 
 // Автоматично підключаємо CSS-файл для вибраної теми
 const themeLink = document.getElementById('theme-style');
