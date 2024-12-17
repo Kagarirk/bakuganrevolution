@@ -183,7 +183,7 @@ nav a:hover::after {
   left: 0;
   width: 100%;
   height: 36px;
-  background-image: url('https://yraaa.ru/test/135/christmas-lights.png');
+  background-image: url('./img/christmas-lights.png');
   z-index: 99;
   animation: blink 1.5s infinite; /* Анімація для моргання */
 }
@@ -198,7 +198,7 @@ nav a:hover::after {
       opacity: 1; /* Включаємо */
   }
   50% {
-      opacity: 0.5; /* Вимикаємо */
+      opacity: 0.7; /* Вимикаємо */
   }
 }
 .news-section {
@@ -212,18 +212,44 @@ nav a:hover::after {
 .news-card {
   display: inline-block;
   width: 300px;
+  height: 300px;
   margin: 15px;
-  padding: 20px;
-  background: linear-gradient(45deg, #ff5722, #ff9800);
-  border-radius: 15px;
+  padding: 80px 40px;
+  background: linear-gradient(45deg, #3122ff, #22d3ff);
+  border-radius: 50%;
   color: white;
-  text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 162, 255, 0.8); /* Додано ефект сяйва */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Додано плавні ефекти */
+  position: relative;
 }
+
 .news-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.1); /* Збільшення при наведенні */
+  background: linear-gradient(45deg, #22d3ff, #3122ff); /* Зміна кольорів при наведенні */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 162, 255, 1); /* Більше сяйва при наведенні */
 }
+
+.news-card::before {
+  content: '✨'; /* Додано символ новорічної зірки */
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.news-card::after {
+  content: '🎄'; /* Додано символ ялинки */
+  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
 .news-card img{
   width: 100%;
 }
