@@ -1,10 +1,11 @@
-const bulbs = document.querySelectorAll('.bulb');
-
-function randomBlink() {
-    bulbs.forEach(bulb => {
-        const randomTime = Math.random() * 2 + 1; // випадковий час для миготіння (1-3 секунди)
-        bulb.style.animationDuration = `${randomTime}s`;
-    });
+function createGarland() {
+  const garlandContainer = document.getElementById('garland');
+  const numLights = 20;  // Кількість елементів на гірлянді
+  for (let i = 0; i < numLights; i++) {
+      const light = document.createElement('div');
+      light.classList.add('garland-light');
+      garlandContainer.appendChild(light);
+  }
 }
 
-setInterval(randomBlink, 1000); // змінюємо тривалість анімації кожну секунду
+window.onload = createGarland;

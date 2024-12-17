@@ -170,6 +170,37 @@ nav a:hover::after {
   background: #0f0f0f; 
 }
 
+.garland-section {
+  width: 100%;
+  height: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+#garland {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background-image: url('https://yraaa.ru/test/135/christmas-lights.png');
+  z-index: 99;
+  animation: blink 1.5s infinite; /* Анімація для моргання */
+}
+
+.garland_1 { background-position: 0 0; }
+.garland_2 { background-position: 0 -36px; }
+.garland_3 { background-position: 0 -72px; }
+.garland_4 { background-position: 0 -108px; }
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1; /* Включаємо */
+  }
+  50% {
+      opacity: 0; /* Вимикаємо */
+  }
+}
 .news-section {
   padding: 50px 20px;
   text-align: center;
