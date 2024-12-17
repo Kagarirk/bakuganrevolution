@@ -5,6 +5,9 @@ function createGarland() {
       const light = document.createElement('div');
       light.classList.add('garland-light');
       garlandContainer.appendChild(light);
+
+      // Додаємо затримку для кожної лампочки, щоб вони моргали по черзі
+      light.style.animationDelay = `${Math.random() * 2}s`; // випадкова затримка
   }
 }
 
