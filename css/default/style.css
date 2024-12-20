@@ -194,7 +194,8 @@
     transform: translateY(-10px);
   }
   .news-card img{
-    width: 100%;
+    width: auto;
+    height:80%
   }
   .modal {
     display: none;
