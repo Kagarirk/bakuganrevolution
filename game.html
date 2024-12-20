@@ -18,25 +18,26 @@
                 <div class="core"></div>
               <img src="./img/logo.png" alt="Logo" class="logo" />
             </div>
-          </div>
+        </div>
+
         <!-- Ліва панель -->
-            <div class="sidebar">
-                <img src="./img/logo.png" alt="Logo" class="logo">
-                <img src="./img/profile-icon.svg" alt="Profile" class="icon" onclick="openModal('profile-modal')">
-                <img src="./img/world-icon.svg" alt="World" class="icon" onclick="loadContent('world')">
-                <img src="./img/inventory-icon.svg" alt="Inventory" class="icon" onclick="openModal('inventory-modal')">
-                <img src="./img/quests-icon.svg" alt="Quests" class="icon" onclick="openModal('quests-modal')">
-                <img src="./img/shop-icon.svg" alt="Shop" class="icon" onclick="openModal('shop-modal')">
-                <img src="deck-icon.png" alt="Deck" class="icon" onclick="openModal('deck-modal')">
-                <div class="time" id="time">00:00</div>
-            </div> 
+        <div class="sidebar">
+            <img src="./img/logo.png" alt="Logo" class="logo">
+            <img src="./img/profile-icon.svg" alt="Profile" class="icon" onclick="openModal('profile-modal')">
+            <img src="./img/world-icon.svg" alt="World" class="icon" onclick="loadContent('world')">
+            <img src="./img/inventory-icon.svg" alt="Inventory" class="icon" onclick="openModal('inventory-modal')">
+            <img src="./img/quests-icon.svg" alt="Quests" class="icon" onclick="openModal('quests-modal')">
+            <img src="./img/shop-icon.svg" alt="Shop" class="icon" onclick="openModal('shop-modal')">
+            <img src="deck-icon.png" alt="Deck" class="icon" onclick="openModal('deck-modal')">
+            <div class="time" id="time">00:00</div>
+        </div> 
+
         <!-- Основна частина -->
         <div class="main-container">
             <div class="content" id="content-area">
                 <h1>Welcome to the Game!</h1>
             </div>
         </div>
-
 
         <!-- Modals -->
         <div id="profile-modal" class="modal">
@@ -62,7 +63,7 @@
                 </div>
               </div>
             </div>
-          </div>
+        </div>
 
         <div id="quests-modal" class="modal">
             <div class="modal-header">Quests <span class="modal-close" onclick="closeModal('quests-modal')">&times;</span></div>
@@ -79,8 +80,26 @@
             <p>Deck customization...</p>
         </div>
 
-          <script src="./js/preloader.js"></script>
-          <script src="./js/time.js"></script>
-          <script src="./js/game_panel.js"></script>
+        <!-- Scripts -->
+        <script src="./js/preloader.js"></script>
+        <script src="./js/time.js"></script>
+        <script>
+            function loadContent(type) {
+                const contentArea = document.getElementById('content-area');
+
+                if (type === 'world') {
+                    contentArea.innerHTML = `
+                        <iframe 
+                            src="./world/world.html" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            sandbox="allow-scripts allow-same-origin">
+                        </iframe>`;
+                } else {
+                    contentArea.innerHTML = '<h1>Welcome to the Game!</h1>';
+                }
+            }
+        </script>
     </body>
 </html>
