@@ -2,28 +2,28 @@ const newsData = [
     {
         id: 'news-1',
         title: 'Exciting updates about our games',
-        image: 'https://via.placeholder.com/800x400',
+        image: './img/news.svg',
         content: 'Details about the new exciting updates.',
         date: '01/01/2024'
     },
     {
         id: 'news-2',
         title: 'Upcoming features and releases',
-        image: 'https://via.placeholder.com/800x400',
+        image: './img/news.svg',
         content: 'Details about upcoming features and releases.',
         date: '02/01/2024'
     },
     {
         id: 'news-3',
         title: 'Community highlights and events',
-        image: 'https://via.placeholder.com/800x400',
+        image: './img/news.svg',
         content: 'Details about community highlights and upcoming events.',
         date: '03/01/2024'
     },
     {
         id: 'news-4',
         title: 'Upcoming features and releases',
-        image: 'https://via.placeholder.com/800x400',
+        image: './img/news.svg',
         content: 'Details about upcoming features and releases.',
         date: '02/01/2024'
     },
