@@ -83,6 +83,7 @@
         <!-- Scripts -->
         <script src="./js/preloader.js"></script>
         <script src="./js/time.js"></script>
+        <script src="./js/game_panel.js"></script>
         <script>
             function loadContent(type) {
                 const contentArea = document.getElementById('content-area');
@@ -98,6 +99,20 @@
                         </iframe>`;
                 } else {
                     contentArea.innerHTML = '<h1>Welcome to the Game!</h1>';
+                }
+            }
+
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'block';
+                }
+            }
+
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'none';
                 }
             }
         </script>
