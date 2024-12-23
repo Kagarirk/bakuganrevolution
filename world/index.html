@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тамагочі-Покемони</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Тамагочі-Покемони 🐾</h1>
+    <div id="game">
+      <!-- Вибір покемона -->
+      <div class="pokemon-selection">
+        <h2>Обери свого покемона</h2>
+        <div class="pokemon-options">
+          <img src="pikachu.gif" alt="Pikachu" class="pokemon" onclick="selectPokemon('Pikachu')">
+          <img src="charmander.gif" alt="Charmander" class="pokemon" onclick="selectPokemon('Charmander')">
+          <img src="squirtle.gif" alt="Squirtle" class="pokemon" onclick="selectPokemon('Squirtle')">
+          <img src="umbreon.gif" alt="umbreon" class="pokemon" onclick="selectPokemon('Umbreon')">
+        </div>
+      </div>
+     
+      <!-- Інтерфейс гри -->
+      <div id="pokemon-status" class="hidden">
+        <h2 id="pokemon-name"></h2>
+        <img id="pokemon-image" src="" alt="Selected Pokemon">
+        <div class="stats">
+          <p>Голод: <span id="hunger">100</span></p>
+          <p>Настрій: <span id="happiness">100</span></p>
+          <p>Енергія: <span id="energy">100</span></p>
+          <p>Рівень: <span id="level">1</span></p>
+          <p>XP: <span id="xp">0</span>/100</p>
+        </div>
+        <div class="actions">
+          <button onclick="feedPokemon()">🍎 Погодувати</button>
+          <button onclick="playWithPokemon()">🎮 Пограти</button>
+          <button onclick="restPokemon()">😴 Відпочити</button>
+        </div>
+        <div id="message"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
+
