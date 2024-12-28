@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Dragonoid",
+      "element": "fire",
+      "image": "https://via.placeholder.com/150",
+      "class": "attacker",
+      "stats": {
+        "strength": 85,
+        "energy": 70,
+        "hp": 90
+      },
+      "skins": [
+        "https://via.placeholder.com/100x100",
+        "https://via.placeholder.com/100x100"
+      ],
+      "evolutionTree": [
+        "Dragonoid -> Dragonoid Ultra",
+        "Dragonoid Ultra -> Dragonoid Max"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tigrerra",
+      "element": "earth",
+      "image": "https://via.placeholder.com/150",
+      "class": "defender",
+      "stats": {
+        "strength": 60,
+        "energy": 80,
+        "hp": 100
+      },
+      "skins": [
+        "https://via.placeholder.com/100x100",
+        "https://via.placeholder.com/100x100"
+      ],
+      "evolutionTree": [
+        "Tigrerra -> Tigrerra Ultra",
+        "Tigrerra Ultra -> Tigrerra Max"
+      ]
+    }
+  ]
+  
